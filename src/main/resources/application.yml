@@ -1,0 +1,20 @@
+server:
+  port: 8050
+spring:
+  application:
+    name: @project.name@
+
+info.version: @project.version@
+
+endpoints.health.sensitive: false
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap:
+      turbineCluster: pipa
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://peer1:8761/eureka/
